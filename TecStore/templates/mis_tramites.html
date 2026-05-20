@@ -1,0 +1,63 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container py-5">
+  <!-- HEADER -->
+
+  <div class="text-center mb-5">
+    <h1 class="fw-bold">Mis Trámites</h1>
+
+    <p class="text-light">Historial de trámites solicitados.</p>
+  </div>
+
+  <!-- CARDS -->
+
+  <div class="row g-4">
+    {% for item in tramites_usuario %}
+
+    <div class="col-lg-4">
+      <div class="tramite-card">
+        <h3>{{ item.tramite.nombre }}</h3>
+
+        <span class="tramite-category"> {{ item.tramite.categoria }} </span>
+
+        <p class="tramite-text mt-3">{{ item.tramite.descripcion }}</p>
+
+        <div class="tramite-info">
+          <span> 💲 {{ item.tramite.costo }} </span>
+
+          <span> ✅ {{ item.solicitud.estado }} </span>
+        </div>
+
+        <div class="tramite-req mt-4">
+          <p>
+            <strong>Método:</strong>
+
+            {{ item.solicitud.metodo_pago }}
+          </p>
+
+          <p>
+            <strong>Fecha:</strong>
+
+            {{ item.solicitud.fecha }}
+          </p>
+
+          <p>
+            <strong>Folio:</strong>
+
+            {{ item.solicitud.folio }}
+          </p>
+        </div>
+
+        <!-- PDF -->
+
+        <a href="/pdf/{{ item.solicitud.id }}" class="btn-register mt-3">
+          Descargar PDF
+        </a>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

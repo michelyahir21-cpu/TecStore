@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container py-5">
+  <div class="form-container">
+    <h1 class="mb-4 text-center">Confirmar Pago</h1>
+
+    <!-- INFO TRÁMITE -->
+
+    <div class="mb-4">
+      <h3>{{ tramite.nombre }}</h3>
+
+      <p class="text-light">{{ tramite.descripcion }}</p>
+    </div>
+
+    <!-- DETALLES -->
+
+    <div class="tramite-req mb-4">
+      <p>
+        <strong>Costo:</strong>
+        ${{ tramite.costo }}
+      </p>
+
+      <p>
+        <strong>Tiempo:</strong>
+        {{ tramite.tiempo }}
+      </p>
+    </div>
+
+    <!-- FORM -->
+
+    <form action="/confirmar_pago/{{ tramite.id }}" method="POST">
+      <!-- MÉTODO -->
+
+      <div class="mb-4">
+        <label class="form-label"> Método de pago </label>
+
+        <select name="metodo_pago" class="form-control" required>
+          <option value="Tarjeta">Tarjeta</option>
+
+          <option value="OXXO">OXXO</option>
+
+          <option value="Transferencia">Transferencia</option>
+        </select>
+      </div>
+
+      <!-- BTN -->
+
+      <button type="submit" class="btn-register w-100">Pagar trámite</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

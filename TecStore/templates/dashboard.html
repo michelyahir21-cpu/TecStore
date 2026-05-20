@@ -1,0 +1,136 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container py-5">
+  <!-- HEADER -->
+
+  <div class="text-center mb-5">
+    <h1 class="fw-bold">Bienvenido, {{ session['user_name'] }}</h1>
+
+    <p class="text-light">Encuentra y solicita tus trámites institucionales.</p>
+  </div>
+
+  <!-- SEARCH -->
+
+  <form action="/tramites" method="GET" class="search-box mb-5">
+    <input
+      type="text"
+      name="buscar"
+      class="search-input"
+      placeholder="Buscar trámite..."
+    />
+
+    <button class="search-btn">
+      <i class="bi bi-search"></i>
+    </button>
+  </form>
+
+  <!-- CATEGORÍAS -->
+
+  <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+    <a href="/tramites?categoria=Constancias" class="category-btn">
+      📄 Constancias
+    </a>
+
+    <a href="/tramites?categoria=Académicos" class="category-btn">
+      🎓 Académicos
+    </a>
+
+    <a href="/tramites?categoria=Inglés" class="category-btn"> 🌍 Inglés </a>
+
+    <a href="/tramites?categoria=Escolares" class="category-btn">
+      🪪 Escolares
+    </a>
+
+    <a href="/tramites?categoria=Reinscripción" class="category-btn">
+      🔁 Reinscripción
+    </a>
+
+    <a href="/tramites?categoria=Bajas" class="category-btn"> 🚫 Bajas </a>
+  </div>
+
+  <!-- CARDS -->
+
+  <div class="row g-4">
+    <!-- CONSTANCIAS -->
+
+    <div class="col-lg-4">
+      <div class="dashboard-card">
+        <h3>Constancias</h3>
+
+        <p>Genera documentos institucionales automáticos.</p>
+
+        <a href="/tramites?categoria=Constancias" class="btn-register">
+          Explorar
+        </a>
+      </div>
+    </div>
+
+    <!-- ACADÉMICOS -->
+
+    <div class="col-lg-4">
+      <div class="dashboard-card">
+        <h3>Académicos</h3>
+
+        <p>Consulta historial académico y documentos.</p>
+
+        <a href="/tramites?categoria=Académicos" class="btn-register">
+          Explorar
+        </a>
+      </div>
+    </div>
+
+    <!-- INGLÉS -->
+
+    <div class="col-lg-4">
+      <div class="dashboard-card">
+        <h3>Inglés</h3>
+
+        <p>Accede a trámites y evaluaciones de inglés.</p>
+
+        <a href="/tramites?categoria=Inglés" class="btn-register"> Explorar </a>
+      </div>
+    </div>
+
+    <!-- ESCOLARES -->
+
+    <div class="col-lg-4">
+      <div class="dashboard-card">
+        <h3>Escolares</h3>
+
+        <p>Recuperación y gestión de servicios escolares.</p>
+
+        <a href="/tramites?categoria=Escolares" class="btn-register">
+          Explorar
+        </a>
+      </div>
+    </div>
+
+    <!-- REINSCRIPCIÓN -->
+
+    <div class="col-lg-4">
+      <div class="dashboard-card">
+        <h3>Reinscripción</h3>
+
+        <p>Gestiona reinscripciones institucionales.</p>
+
+        <a href="/tramites?categoria=Reinscripción" class="btn-register">
+          Explorar
+        </a>
+      </div>
+    </div>
+
+    <!-- BAJAS -->
+
+    <div class="col-lg-4">
+      <div class="dashboard-card">
+        <h3>Bajas</h3>
+
+        <p>Solicita trámites relacionados con bajas.</p>
+
+        <a href="/tramites?categoria=Bajas" class="btn-register"> Explorar </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

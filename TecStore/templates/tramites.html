@@ -1,0 +1,206 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container py-5">
+  <!-- HEADER -->
+
+  <div class="text-center mb-5">
+    <h1 class="fw-bold">Catálogo de Trámites</h1>
+
+    {% if categoria_actual %}
+
+    <p class="text-info">
+      Categoría:
+      <strong>{{ categoria_actual }}</strong>
+    </p>
+
+    {% else %}
+
+    <p class="text-light">Todos los trámites disponibles</p>
+
+    {% endif %}
+  </div>
+
+  <!-- CARDS -->
+
+  <div class="row g-4">
+    {% for tramite in tramites %}
+
+    <div class="col-lg-4">
+      <div class="tramite-card">
+        <!-- IMAGEN -->
+
+        <div class="tramite-image">
+          <!-- CONSTANCIAS -->
+
+          {% if tramite.nombre == 'Constancia Simple' %}
+
+          <img
+            src="{{ url_for('static', filename='img/constancias/constancia de asignatura sin calificaciones.png') }}"
+          />
+
+          {% elif tramite.nombre == 'Constancia Especial' %}
+
+          <img
+            src="{{ url_for('static', filename='img/constancias/constancia especial.png') }}"
+          />
+
+          {% elif tramite.nombre == 'Constancia de Liberación de Residencias' %}
+
+          <img
+            src="{{ url_for('static', filename='img/constancias/constancia de liberación.png') }}"
+          />
+
+          {% elif tramite.nombre == 'Constancia Trámite de Traslado' %}
+
+          <img
+            src="{{ url_for('static', filename='img/constancias/constancia por trámite de traslado.png') }}"
+          />
+
+          {% elif tramite.nombre == 'Constancia de No Adeudo' %}
+
+          <img
+            src="{{ url_for('static', filename='img/constancias/Constancia de no adeudo.png') }}"
+          />
+
+          <!-- ACADÉMICOS -->
+
+          {% elif tramite.nombre == 'Kardex' %}
+
+          <img
+            src="{{ url_for('static', filename='img/academico/kardex.png') }}"
+          />
+
+          {% elif tramite.nombre == 'Consulta Actividades Complementarias' %}
+
+          <img
+            src="{{ url_for('static', filename='img/academico/consulta de actividades complementarias.png') }}"
+          />
+
+          {% elif tramite.nombre == 'Programa de Estudios Firmado' %}
+
+          <img
+            src="{{ url_for('static', filename='img/academico/programa de estudios firmado y sellado.png') }}"
+          />
+
+          {% elif tramite.nombre == 'Carta Comité Académico' %}
+
+          <img
+            src="{{ url_for('static', filename='img/academico/carta de comité académico.png') }}"
+          />
+
+          <!-- INGLÉS -->
+
+          {% elif tramite.nombre == 'Curso de Inglés' %}
+
+          <img
+            src="{{ url_for('static', filename='img/ingles/curso de ingles, estudiantes ITT2.png') }}"
+          />
+
+          {% elif tramite.nombre == 'Examen de Colocación Inglés' %}
+
+          <img
+            src="{{ url_for('static', filename='img/ingles/examen de colocación de ingles.png') }}"
+          />
+
+          {% elif tramite.nombre == 'Liberación de Inglés' %}
+
+          <img
+            src="{{ url_for('static', filename='img/ingles/carta de liberación del idioma ingles.png') }}"
+          />
+
+          <!-- ESCOLARES -->
+
+          {% elif tramite.nombre == 'Duplicado Credencial' %}
+
+          <img
+            src="{{ url_for('static', filename='img/escolares/duplicado de credencial (reposición).png') }}"
+          />
+
+          {% elif tramite.nombre == 'Recuperación Correo Institucional' %}
+
+          <img
+            src="{{ url_for('static', filename='img/escolares/recuperación de correo institucional.png') }}"
+          />
+
+          {% elif tramite.nombre == 'Recuperación Moodle' %}
+
+          <img
+            src="{{ url_for('static', filename='img/escolares/recuperación de cuenta moodle.png') }}"
+          />
+
+          {% elif tramite.nombre == 'Recuperación Cuenta Biblioteca' %}
+
+          <img
+            src="{{ url_for('static', filename='img/escolares/recuperción de cuenta eLibro.png') }}"
+          />
+
+          {% elif tramite.nombre == 'Reposición NIP' %}
+
+          <img
+            src="{{ url_for('static', filename='img/escolares/reposición de nip.png') }}"
+          />
+
+          <!-- REINSCRIPCIÓN -->
+
+          {% elif tramite.nombre == 'Reinscripción en Línea' %}
+
+          <img
+            src="{{ url_for('static', filename='img/reinscripcion/reinscripción mixta (en línea).png') }}"
+          />
+
+          {% elif tramite.nombre == 'Reinscripción Extemporánea' %}
+
+          <img
+            src="{{ url_for('static', filename='img/reinscripcion/reinscripción extemporánea.png') }}"
+          />
+
+          <!-- BAJAS -->
+
+          {% elif tramite.nombre == 'Constancia de Baja Temporal' %}
+
+          <img
+            src="{{ url_for('static', filename='img/bajas/constancia de baja temporal.png') }}"
+          />
+
+          {% endif %}
+        </div>
+
+        <!-- ICONO -->
+
+        <div class="tramite-icon">
+          <i class="bi {{ tramite.icono }}"></i>
+        </div>
+
+        <!-- INFO -->
+
+        <h3 class="mt-4">{{ tramite.nombre }}</h3>
+
+        <span class="tramite-category"> {{ tramite.categoria }} </span>
+
+        <p class="tramite-text">{{ tramite.descripcion }}</p>
+
+        <div class="tramite-info">
+          <span> 💲 {{ tramite.costo }} </span>
+
+          <span> ⚡ {{ tramite.tiempo }} </span>
+        </div>
+
+        <div class="tramite-req mt-4">
+          <strong> Requisitos: </strong>
+
+          <p>{{ tramite.requisitos }}</p>
+        </div>
+
+        <!-- BOTÓN -->
+
+        <a href="/pago/{{ tramite.id }}" class="btn-register mt-3">
+          Solicitar trámite
+        </a>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

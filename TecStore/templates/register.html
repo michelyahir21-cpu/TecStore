@@ -1,0 +1,78 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container py-5">
+  <div class="row justify-content-center align-items-center min-vh-100">
+    <div class="col-lg-5">
+      <div class="card-custom">
+        <div class="text-center mb-4">
+          <h2 class="fw-bold">Registro Institucional</h2>
+
+          <p class="text-light">
+            Usa tu número de control y correo institucional para crear tu cuenta
+            y accede a los servicios y trámites de TecStore
+          </p>
+        </div>
+
+        <form method="POST">
+          <input
+            type="number"
+            name="nControl"
+            class="form-control mb-3"
+            placeholder="Número de control"
+            required
+          />
+
+          <input
+            type="text"
+            name="nombres"
+            class="form-control mb-3"
+            placeholder="Nombre(s)"
+            required
+          />
+
+          <input
+            type="text"
+            name="apellidoP"
+            class="form-control mb-3"
+            placeholder="Apellido paterno"
+            required
+          />
+
+          <input
+            type="text"
+            name="apellidoM"
+            class="form-control mb-3"
+            placeholder="Apellido materno"
+            required
+          />
+
+          <input
+            type="email"
+            name="email"
+            class="form-control mb-3"
+            placeholder="Correo electrónico"
+            required
+          />
+
+          <input
+            type="password"
+            name="password"
+            class="form-control mb-4"
+            placeholder="Contraseña"
+            required
+          />
+
+          <button type="submit" class="btn-register">Crear Cuenta</button>
+        </form>
+
+        <div class="text-center mt-4">
+          <span class="text-light"> ¿Ya tienes cuenta? </span>
+
+          <a href="/login" class="login-link"> Inicia sesión </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

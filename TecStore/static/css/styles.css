@@ -1,0 +1,325 @@
+/* =========================
+   GENERAL
+========================= */
+
+body {
+  background: #081028;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  padding: 20px 0;
+  background: transparent;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  color: white !important;
+}
+
+.nav-link {
+  color: white !important;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #60a5fa !important;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-login {
+  background: #2563eb;
+  padding: 10px 20px !important;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background: #1d4ed8;
+}
+
+.btn-register-nav {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 20px !important;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.btn-register-nav:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-register {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.btn-register:hover {
+  background: #1d4ed8;
+  color: white;
+}
+
+.btn-logout {
+  background: #ef4444;
+  padding: 10px 20px !important;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-logout:hover {
+  background: #dc2626;
+}
+
+/* =========================
+   USER
+========================= */
+
+.nav-user {
+  margin-left: 15px;
+  margin-right: 15px;
+  color: #cbd5e1;
+  font-weight: bold;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+.hero-text {
+  font-size: 1.3rem;
+  color: #cbd5e1;
+  margin-top: 20px;
+}
+
+.hero-image img {
+  width: 100%;
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.badge-custom {
+  background: rgba(37, 99, 235, 0.2);
+  color: #60a5fa;
+  padding: 12px 25px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.form-container {
+  max-width: 500px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 15px;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border-color: #2563eb;
+  box-shadow: none;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+  max-width: 700px;
+  margin: auto;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1.1rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-btn {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+}
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.category-btn {
+  background: rgba(37, 99, 235, 0.15);
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.category-btn:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  border-color: #2563eb;
+}
+
+/* =========================
+   TRÁMITES
+========================= */
+
+.tramite-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.tramite-card:hover {
+  transform: translateY(-5px);
+  border-color: #2563eb;
+}
+
+.tramite-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(37, 99, 235, 0.2);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #60a5fa;
+}
+
+.tramite-category {
+  display: inline-block;
+  background: rgba(37, 99, 235, 0.2);
+  color: #60a5fa;
+  padding: 5px 12px;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+
+.tramite-text {
+  color: #cbd5e1;
+  margin-top: 15px;
+}
+
+.tramite-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  color: #60a5fa;
+  font-weight: bold;
+}
+
+.tramite-req {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.tramite-req p {
+  margin-top: 10px;
+  color: #cbd5e1;
+}
+
+/* =========================
+   IMAGEN TRÁMITE
+========================= */
+
+.tramite-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.tramite-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
