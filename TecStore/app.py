@@ -26,7 +26,7 @@ app.secret_key = 'tecstore'
 
 app.config[
     'SQLALCHEMY_DATABASE_URI'
-] = 'mysql+pymysql://root:root@localhost/tecstore'
+] = 'mysql+pymysql://root:1ZCGcTFyFzdHthbTNZtBHCJMdSLIzmBK@caboose.proxy.rlwy.net:16022/railway'
 
 app.config[
     'SQLALCHEMY_TRACK_MODIFICATIONS'
@@ -78,4 +78,4 @@ with app.app_context():
 
 if __name__ == '__main__':
 
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
